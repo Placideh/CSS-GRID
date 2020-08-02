@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Grids</title>
+	<style>
+		body{
+			background: #ddd;
+			font-family: Arial,Helvetica,sans-serif;
+
+		}
+		.wrapper{
+			display: grid;
+			grid-template-columns:70% 30%;
+			/*so since it is a grid no matter how div we enter it will still continue to follow 
+			this template of 70% and 30%*/
+			/*this is used to show the widht that our columns should have */
+			/* grid-template-columns: 40% 30% 30%; this is also another way that we can rearrange this grid */
+			/*so if we want some spacing we don't have to manually settin the padding and marging we have 
+			propety called gap*/
+			grid-column-gap:1em;
+			/*so this above is the column gap*/
+			grid-row-gap:1em;
+			/*this above is the row gap*/
+			/*if you know that you are going to use both column and row with the same size
+			on spacing you will be using grid-gap*/
+			grid-gap:1em;
+		}
+		.wrapper >div{
+			background: #eee;
+			padding:1em;
+		}
+		 .wrapper >div:nth-child(odd){
+			/*so this means we are taking every div in the wrapper class and setting to 
+			it that every odd element should have the same background element*/
+			background: #ded;
+		} 
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div>
+			  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dignissimos alias assumenda, numquam. Nobis ducimus amet expedita odit nesciunt repudiandae possimus nam ipsa natus at! Molestias, in quod esse, fuga ab eos obcaecati quaerat iste eveniet rerum quae nesciunt dolorum tempore delectus ad eligendi consectetur. Earum laborum quaerat eius facere placeat hic vero aut quam, deleniti magnam? Aperiam quam rem in quo reprehenderit nisi incidunt, nihil assumenda quae rerum delectus explicabo debitis eaque fugit, saepe asperiores ex veritatis vel deleniti.
+		</div>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quasi animi, repellendus non blanditiis deleniti, nostrum tempore, sunt est cum voluptatibus labore cumque at. Consequuntur blanditiis nemo sapiente, mollitia eum!
+		</div>
+		<!-- so Notice that we have copied the same content but because it is a grid it still have the same
+		width and also all the properties that we have setted on it. -->
+			<div>
+			  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dignissimos alias assumenda, numquam. Nobis ducimus amet expedita odit nesciunt repudiandae possimus nam ipsa natus at! Molestias, in quod esse, fuga ab eos obcaecati quaerat iste eveniet rerum quae nesciunt dolorum tempore delectus ad eligendi consectetur. Earum laborum quaerat eius facere placeat hic vero aut quam, deleniti magnam? Aperiam quam rem in quo reprehenderit nisi incidunt, nihil assumenda quae rerum delectus explicabo debitis eaque fugit, saepe asperiores ex veritatis vel deleniti.
+		</div>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quasi animi, repellendus non blanditiis deleniti, nostrum tempore, sunt est cum voluptatibus labore cumque at. Consequuntur blanditiis nemo sapiente, mollitia eum!
+		</div>
+	</div>
+	
+</body>
+</html>

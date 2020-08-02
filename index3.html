@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Grids</title>
+	<style>
+			body{
+					background: #ddd;
+					font-family: Arial,Helvetica,sans-serif;
+
+				}
+				.wrapper{
+					display: grid;
+					grid-template-columns: 1fr 2fr 1fr;
+					grid-auto-rows: minmax(100px,auto);
+					grid-gap:1em;
+					justify-items:start;
+					/*this property above is going to put element at start if we set it to 
+					the value of 'start'*/
+					justify-items:center;
+					/*this propety is going to put the elements in the center bcz of the value 'center'*/
+
+					justify-items:end;
+					/*this will put items at the end bcz of value 'end'*/
+					justify-items:stretch;
+					/*the default is 'stretch*/
+
+					/*ALIGN ITEMS so this works as moving up where as justify-items was moving left to right 
+					align items is top to bottom*/
+					align-items: start;
+					/*this will move the items at the top*/
+					align-items: center;
+					/* this will move the items at the center*/
+					align-items: end;
+
+					align-items: stretch;
+				}
+				.wrapper >div{
+					background: #eee;
+					padding:1em;
+				}
+				 .wrapper >div:nth-child(odd){
+					/*so this means we are taking every div in the wrapper class and setting to 
+					it that every odd element should have the same background element*/
+					background: #ded;
+				} 
+				.box1{
+					/*align-self:start; */
+					grid-column: 1/3;
+					grid-row:1/3;
+				}
+				.box2{
+					/*align-self:end; */
+					grid-column: 3;
+					grid-row:1/3;
+				}
+				.box3{
+					/*justify-self:end;*/
+					grid-column: 2/4;
+					grid-row:3;
+				} 
+				.box4{
+					/*justify-self:center;*/
+					grid-column: 1;
+					grid-row: 2/4;
+					border:1px #333 solid;
+				}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="box box1">Box 1</div>
+		<div class="box box2">Box 2</div>
+		<div class="box box3">Box 3</div>
+		<div class="box box4">Box 4</div>
+	</div>
+</body>
+</html>
